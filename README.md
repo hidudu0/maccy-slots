@@ -23,7 +23,7 @@
 
 ## 설치
 
-1. [Releases](https://github.com/hidudu0/maccy-slots/releases/latest)에서 `Maccy Slots.zip`을 받아 압축을 풀고, `Maccy Slots.app`을 `응용 프로그램` 폴더로 옮깁니다.
+1. [Releases](https://github.com/hidudu0/maccy-slots/releases/latest)에서 `Maccy.Slots.zip`을 받아 압축을 풀고, `Maccy Slots.app`을 `응용 프로그램` 폴더로 옮깁니다.
 2. 처음 열면 macOS가 막습니다 → [주의사항 1](#1-처음-열면-macos가-막습니다)
 3. 손쉬운 사용 권한을 켭니다 → [주의사항 2](#2-손쉬운-사용-권한이-필요합니다)
 4. (선택) Maccy 설정(⌘,) → 일반 → **로그인 시 실행** 체크
