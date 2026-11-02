@@ -2,7 +2,7 @@
 
 [Maccy](https://github.com/p0deje/Maccy) 2.8.0에 **클립보드 슬롯 3개**를 더한 비공식 포크입니다. 원 개발자와는 관계없습니다. 원본 기능(⇧⌘C 히스토리 창, 고정, 검색 등)은 그대로 있습니다.
 
-> **English:** Unofficial fork of Maccy 2.8.0 that adds three global clipboard slots. Hold ⌘ + C and press 1/2/3 to save what you copied into a slot; hold ⌘ and V, press 1/2/3 to paste a slot. Plain ⌘1–3 still go to the front app. Not affiliated with the Maccy project. The whole feature lives in [`Maccy/Slots.swift`](Maccy/Slots.swift).
+> **English:** Unofficial fork of Maccy 2.8.0 that adds three global clipboard slots. Hold ⌘ + C and press 1/2/3 to save what you copied into a slot; hold ⌘ and V, press 1/2/3 to paste a slot. Plain ⌘1–3 still go to the front app. Not affiliated with the Maccy project; proposed upstream as an opt-in setting in [p0deje/Maccy#1623](https://github.com/p0deje/Maccy/pull/1623). The whole feature lives in [`Maccy/Slots.swift`](Maccy/Slots.swift).
 
 ## 사용법
 
@@ -16,6 +16,10 @@
 - 텍스트, 이미지, 파일 등 복사한 형식 그대로 저장되고, 앱을 껐다 켜도 남아 있습니다.
 - ⌘C 자체는 늦어지지 않습니다. 숫자는 **C를 누르고 있는 동안에만** 슬롯 저장으로 인식합니다. C를 뗀 뒤 누른 숫자는 저장이 아니라서, ⌘C로 복사하고 바로 ⌘V + 숫자를 눌러도 슬롯이 덮어써지지 않습니다.
 - 빈 슬롯을 붙여넣으면 경고음만 납니다.
+
+## 원본 Maccy에 제안 중
+
+이 기능을 원본 Maccy에 넣자는 PR을 올려 두었습니다: [p0deje/Maccy#1623](https://github.com/p0deje/Maccy/pull/1623). 원본에 들어가면 설정 → 일반 → **클립보드 슬롯**을 켜서 쓰는 방식이고(기본은 꺼짐), 이 포크 없이 원본 Maccy에서 바로 쓸 수 있습니다. 그 전까지는 이 포크를 쓰면 됩니다.
 
 ## 설치
 
@@ -41,7 +45,7 @@ Apple 개발자 인증서와 공증 없이 ad-hoc 서명한 앱이라 "확인되
 키 입력을 가로채야 하는 기능이라 권한이 있어야 동작합니다. 처음 켜면 시스템 요청 창이 뜹니다.
 
 - **시스템 설정 → 개인정보 보호 및 보안 → 손쉬운 사용 → Maccy Slots** 켜기
-- 켜고 나면 3초 안에 재실행 없이 동작합니다.
+- 켜고 나면 3초 안에 재실행 없이 동작합니다. 안 되면 메뉴 막대 아이콘 → 종료 후 앱을 다시 켜 보세요.
 - 권한이 없을 때 증상: ⌘ + C 누른 채 1을 눌렀는데 슬롯 대신 앞 앱의 ⌘1(탭·창 전환)이 실행됩니다.
 
 ### 3. 원본 Maccy와 동시에 켜지 마세요
@@ -98,6 +102,10 @@ cd maccy-slots
 - `build.sh`, `test_slots.sh`
 
 전체 차이: [2.8.0...slots](https://github.com/hidudu0/maccy-slots/compare/2.8.0...slots)
+
+브랜치:
+- `slots` (기본): 이 포크. 지금 보고 있는 README와 Releases의 앱이 이 브랜치입니다.
+- `clipboard-slots`: 원본에 보낸 PR 버전. 원본 최신 코드 기준이고, 설정 토글·테스트·번역이 들어 있습니다.
 
 ## 라이선스
 
