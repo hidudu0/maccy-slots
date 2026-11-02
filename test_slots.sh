@@ -76,11 +76,17 @@ posted.removeAll()
 _ = key(a, down: false)
 _ = key(v, down: false)
 
-// ⌘C then 1 saves; the copy itself is never delayed.
+// ⌘ + C held + 1 saves; the copy itself is never delayed.
 check("⌘C passes", key(c, down: true))
-_ = key(c, down: false)
-check("digit after ⌘C swallowed", !key(one, down: true))
+check("⌘C repeat passes", key(c, down: true, repeat: true))
+check("digit while C held swallowed", !key(one, down: true))
 check("digit up swallowed", !key(one, down: false))
+check("C up passes", key(c, down: false))
+
+// A digit after C is released passes, so ⌘C then ⌘V + 1 can't overwrite a slot.
+_ = key(c, down: true)
+_ = key(c, down: false)
+check("digit after C released passes", key(one, down: true) && key(one, down: false))
 
 // ⌘1 without C/V is left to the front app.
 _ = command(false)

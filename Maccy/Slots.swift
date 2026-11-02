@@ -1,6 +1,6 @@
 import AppKit
 
-// Hold ⌘, press C then 1/2/3 to save the copied content into a slot.
+// Hold ⌘ and C, press 1/2/3 to save the copied content into a slot.
 // Hold ⌘ and V, press 1/2/3 to paste a slot.
 // A plain ⌘V is held back and pasted as soon as V is released.
 // Not on the main actor (the module default): the tap runs on its own thread.
@@ -83,6 +83,8 @@ nonisolated enum Slots {
 
     case .keyUp:
       if key == vKey { flushPaste() }
+      // Digits only save while C is held, so ⌘C then ⌘V + digit never overwrites a slot.
+      if key == cKey { copyChangeCount = nil }
       return swallowedKeyUps.remove(key) == nil
 
     case .keyDown:
@@ -113,7 +115,12 @@ nonisolated enum Slots {
         return !swallowedKeyUps.contains(key)
       }
 
-      copyChangeCount = commandOnly && key == cKey ? NSPasteboard.general.changeCount : nil
+      if commandOnly && key == cKey {
+        // Keep the count from the first press while C repeats.
+        if !autorepeat { copyChangeCount = NSPasteboard.general.changeCount }
+      } else {
+        copyChangeCount = nil
+      }
 
       // Another key while ⌘V is held back: paste first, then replay the key to keep the order.
       if pastePending {

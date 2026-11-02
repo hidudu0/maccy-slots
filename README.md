@@ -2,19 +2,19 @@
 
 [Maccy](https://github.com/p0deje/Maccy) 2.8.0에 **클립보드 슬롯 3개**를 더한 비공식 포크입니다. 원 개발자와는 관계없습니다. 원본 기능(⇧⌘C 히스토리 창, 고정, 검색 등)은 그대로 있습니다.
 
-> **English:** Unofficial fork of Maccy 2.8.0 that adds three global clipboard slots. Hold ⌘, press C then 1/2/3 to save what you copied into a slot; hold ⌘ and V, press 1/2/3 to paste a slot. Plain ⌘1–3 still go to the front app. Not affiliated with the Maccy project. The whole feature lives in [`Maccy/Slots.swift`](Maccy/Slots.swift).
+> **English:** Unofficial fork of Maccy 2.8.0 that adds three global clipboard slots. Hold ⌘ + C and press 1/2/3 to save what you copied into a slot; hold ⌘ and V, press 1/2/3 to paste a slot. Plain ⌘1–3 still go to the front app. Not affiliated with the Maccy project. The whole feature lives in [`Maccy/Slots.swift`](Maccy/Slots.swift).
 
 ## 사용법
 
 | 하고 싶은 것 | 누르는 키 |
 |---|---|
-| 방금 복사한 내용을 슬롯에 저장 | ⌘ 누른 채 **C → 1 / 2 / 3** |
+| 방금 복사한 내용을 슬롯에 저장 | ⌘ + **C 누른 채 1 / 2 / 3** |
 | 슬롯 내용 붙여넣기 | ⌘ + **V 누른 채 1 / 2 / 3** |
 | 평소 붙여넣기 | ⌘V 그대로 |
 | ⌘1~3만 누름 | 앞에 있는 앱으로 그대로 전달 (탭 전환 등 안 막음) |
 
 - 텍스트, 이미지, 파일 등 복사한 형식 그대로 저장되고, 앱을 껐다 켜도 남아 있습니다.
-- ⌘C 자체는 늦어지지 않습니다. 숫자는 ⌘을 계속 누르고 있는 동안에만 슬롯 저장으로 인식합니다.
+- ⌘C 자체는 늦어지지 않습니다. 숫자는 **C를 누르고 있는 동안에만** 슬롯 저장으로 인식합니다. C를 뗀 뒤 누른 숫자는 저장이 아니라서, ⌘C로 복사하고 바로 ⌘V + 숫자를 눌러도 슬롯이 덮어써지지 않습니다.
 - 빈 슬롯을 붙여넣으면 경고음만 납니다.
 
 ## 설치
@@ -42,7 +42,7 @@ Apple 개발자 인증서와 공증 없이 ad-hoc 서명한 앱이라 "확인되
 
 - **시스템 설정 → 개인정보 보호 및 보안 → 손쉬운 사용 → Maccy Slots** 켜기
 - 켜고 나면 3초 안에 재실행 없이 동작합니다.
-- 권한이 없을 때 증상: ⌘C → 1을 눌렀는데 슬롯 대신 앞 앱의 ⌘1(탭·창 전환)이 실행됩니다.
+- 권한이 없을 때 증상: ⌘ + C 누른 채 1을 눌렀는데 슬롯 대신 앞 앱의 ⌘1(탭·창 전환)이 실행됩니다.
 
 ### 3. 원본 Maccy와 동시에 켜지 마세요
 둘 다 ⇧⌘C를 쓰기 때문에 충돌합니다. 원본 Maccy는 종료하고 로그인 항목에서도 꺼 주세요.
